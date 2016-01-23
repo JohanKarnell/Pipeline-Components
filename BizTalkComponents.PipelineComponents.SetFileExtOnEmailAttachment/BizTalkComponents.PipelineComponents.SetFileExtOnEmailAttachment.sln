@@ -1,7 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BizTalkComponents.PipelineComponents.SetFileExtOnEmailAttachment", "BizTalkComponents.PipelineComponents.SetFileExtOnEmailAttachment.csproj", "{12E418FA-FDF9-49AC-9EF6-F5C2BC96BE19}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BizTalkComponents.PipelineComponents.SetFileExtOnEmailAttachment", "Src\SetFileExtOnEmailAttachment\BizTalkComponents.PipelineComponents.SetFileExtOnEmailAttachment.csproj", "{12E418FA-FDF9-49AC-9EF6-F5C2BC96BE19}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{91C70782-B709-4F28-9A51-CEC1879E468F}"
+	ProjectSection(SolutionItems) = preProject
+		Build\Build.proj = Build\Build.proj
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BizTalkComponents.PipelineComponents.SetFileExtOnEmailAttachment.Tests.UnitTests", "Tests\UnitTests\BizTalkComponents.PipelineComponents.SetFileExtOnEmailAttachment.Tests.UnitTests.csproj", "{298D31EB-2EC5-4838-9F96-1EDA8D04AEEC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +20,10 @@ Global
 		{12E418FA-FDF9-49AC-9EF6-F5C2BC96BE19}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12E418FA-FDF9-49AC-9EF6-F5C2BC96BE19}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12E418FA-FDF9-49AC-9EF6-F5C2BC96BE19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{298D31EB-2EC5-4838-9F96-1EDA8D04AEEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{298D31EB-2EC5-4838-9F96-1EDA8D04AEEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{298D31EB-2EC5-4838-9F96-1EDA8D04AEEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{298D31EB-2EC5-4838-9F96-1EDA8D04AEEC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>BizTalkComponents.Utils</id>
+    <version>2.3.0.0</version>
+    <authors>Robin Hultman</authors>
+    <owners>Robin Hultman</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Extension methods for the BizTalk message context.</description>
+    <releaseNotes>Added new method to ensure that property values are not overwritten with null.</releaseNotes>
+    <copyright>Copyright 2014</copyright>
+    <tags>BizTalk</tags>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.ComponentModel.DataAnnotations" targetFramework=".NETFramework4.0" />
+      <frameworkAssembly assemblyName="Microsoft.XLANGs.BaseTypes" targetFramework=".NETFramework4.0" />
+      <frameworkAssembly assemblyName="Microsoft.BizTalk.GlobalPropertySchemas" targetFramework=".NETFramework4.0" />
+      <frameworkAssembly assemblyName="Microsoft.BizTalk.Pipeline" targetFramework=".NETFramework4.0" />
+    </frameworkAssemblies>
+    <references />
+  </metadata>
+</package>

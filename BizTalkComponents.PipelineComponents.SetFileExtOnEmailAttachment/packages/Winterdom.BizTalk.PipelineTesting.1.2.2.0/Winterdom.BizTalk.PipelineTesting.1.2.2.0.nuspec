@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Winterdom.BizTalk.PipelineTesting</id>
+    <version>1.2.2.0</version>
+    <authors>Tomas Restrepo</authors>
+    <owners>Tomas Restrepo</owners>
+    <projectUrl>https://github.com/tomasr/pipelinetesting</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>BizTalk library for unit-testing pipelines and custom pipeline components</description>
+    <releaseNotes>* IPipelineContext.StageID now reflects the current stage ID during pipeline execution</releaseNotes>
+    <tags>BizTalk Testing</tags>
+    <references>
+      <reference file="Winterdom.BizTalk.PipelineTesting.dll" />
+    </references>
+  </metadata>
+</package>
