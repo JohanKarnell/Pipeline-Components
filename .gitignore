@@ -45,3 +45,6 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+*.suo
+BizTalkComponents.PipelineComponents.SetFileExtOnEmailAttachment/Src/SetFileExtOnEmailAttachment/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+BizTalkComponents.PipelineComponents.SetFileExtOnEmailAttachment/Src/SetFileExtOnEmailAttachment/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs
