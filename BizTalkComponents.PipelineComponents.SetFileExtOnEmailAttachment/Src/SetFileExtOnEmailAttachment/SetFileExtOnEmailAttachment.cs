@@ -21,14 +21,14 @@ namespace BizTalkComponents.PipelineComponents.SetFileExtOnEmailAttachment
         private const string UseMessageExtensionPropertyName = "UseMessageExtension";
 
         #region Parameters
-
         
+        // Lägg till ytterligare en parameter? Output filename
+
         [DisplayName("File Extension")]
         [Description("The file extension to set on the email attachment")]
         public string FileExtension { get; set; }
 
         [RequiredRuntime]
-        [Browsable(true)]
         [DisplayName("Use message extension")]
         [Description("Use the processed message file extension")]
         public bool UseMessageExtension { get; set; }
@@ -46,11 +46,15 @@ namespace BizTalkComponents.PipelineComponents.SetFileExtOnEmailAttachment
 
             try
             {
+                // Filändelser sätts inte på utgående mail. Se över logik ytterligare
+                // Enligt den URI ser jag ut att göra rätt: http://www.hivmr.com/db/ps7cpmx1dscxcxf8fzsp9kskfjzkfzs3
                 if (UseMessageExtension)
                 {
                     var recievedFileName = ContextExtensions.Read(pInMsg.Context, new ContextProperty(FileProperties.ReceivedFileName));
                     ContextExtensions.Write(pInMsg.Context, new ContextProperty(MIMEProperties.FileName), recievedFileName);
                 }
+                // Filändelser sätts inte på utgående mail. Se över logik ytterligare
+                // Enligt den URI ser jag ut att göra rätt: http://www.hivmr.com/db/ps7cpmx1dscxcxf8fzsp9kskfjzkfzs3
                 else if (!String.IsNullOrEmpty(FileExtension))
                 {
                     ContextExtensions.Write(pInMsg.Context, new ContextProperty(MIMEProperties.FileName), FileExtension);
@@ -79,7 +83,7 @@ namespace BizTalkComponents.PipelineComponents.SetFileExtOnEmailAttachment
         public void Load(IPropertyBag propertyBag, int errorLog)
         {
             FileExtension = PropertyBagHelper.ReadPropertyBag<string>(propertyBag, FileExtensionPropertyName);
-            UseMessageExtension = Convert.ToBoolean(PropertyBagHelper.ReadPropertyBag<string>(propertyBag, UseMessageExtensionPropertyName));
+            UseMessageExtension = PropertyBagHelper.ReadPropertyBag<bool>(propertyBag, UseMessageExtensionPropertyName);
         }
 
         public void Save(IPropertyBag propertyBag, bool clearDirty, bool saveAllProperties)
