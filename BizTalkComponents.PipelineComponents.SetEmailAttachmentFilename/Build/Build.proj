@@ -3,20 +3,20 @@
 	<Import Project="$(MSBuildExtensionsPath)\ExtensionPack\4.0\MSBuild.ExtensionPack.tasks"/>
 	<PropertyGroup>
 		<DestinationPath>.</DestinationPath>
-		<ApplicationName>BizTalkComponents.PipelineComponents.SetFileExtOnEmailAttachment</ApplicationName>
+		<ApplicationName>BizTalkComponents.PipelineComponents.SetEmailAttachmentFilename</ApplicationName>
 	</PropertyGroup>
 	<ItemGroup>
-		<Resource Include="..\Src\SetFileExtOnEmailAttachment\bin\Debug\BizTalkComponents.PipelineComponents.SetFileExtOnEmailAttachment.dll" />
+		<Resource Include="..\Src\SetEmailAttachmentFilename\bin\Debug\BizTalkComponents.PipelineComponents.SetEmailAttachmentFilename.dll" />
 	</ItemGroup>
 	<Target Name="GetVersion">
-		<MSBuild.ExtensionPack.Framework.Assembly TaskAction="GetInfo" NetAssembly="..\Src\SetFileExtOnEmailAttachment\bin\Debug\BizTalkComponents.PipelineComponents.SetFileExtOnEmailAttachment.dll">
+		<MSBuild.ExtensionPack.Framework.Assembly TaskAction="GetInfo" NetAssembly="..\Src\SetEmailAttachmentFilename\bin\Debug\BizTalkComponents.PipelineComponents.SetEmailAttachmentFilename.dll">
 				<Output TaskParameter="OutputItems" ItemName="Info"/>
 			 </MSBuild.ExtensionPack.Framework.Assembly>
 	</Target>
 
 	<Target Name="GenerateMsi" DependsOnTargets="GetVersion">
 		<MsiTask  
-			FileName="BizTalkComponents.PipelineComponents.SetFileExtOnEmailAttachment%(Info.AssemblyInformationalVersion).msi"
+			FileName="BizTalkComponents.PipelineComponents.SetEmailAttachmentFilename%(Info.AssemblyInformationalVersion).msi"
 			DestinationPath="$(DestinationPath)"
 			ApplicationName="$(ApplicationName)"
 			SourceLocation="C:\%(Info.AssemblyInformationalVersion)"
