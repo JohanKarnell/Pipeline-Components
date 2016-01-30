@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using BizTalkComponents.Utils;
 
-namespace BizTalkComponents.PipelineComponents.SetFileExtOnEmailAttachment
+namespace BizTalkComponents.PipelineComponents.SetEmailAttachmentFilename
 {
-    public partial class SetFileExtOnEmailAttachment
+    public partial class SetEmailAttachmentFilename
     {
         public string Name { get { return "SetFileExtOnEmailAttachment"; } }
         public string Version { get { return "1.0"; } }

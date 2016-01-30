@@ -10,28 +10,41 @@ using IComponent = Microsoft.BizTalk.Component.Interop.IComponent;
 using System.ComponentModel;
 using System.Diagnostics;
 
-namespace BizTalkComponents.PipelineComponents.SetFileExtOnEmailAttachment
+namespace BizTalkComponents.PipelineComponents.SetEmailAttachmentFilename
 {
     [ComponentCategory(CategoryTypes.CATID_PipelineComponent)]
     [ComponentCategory(CategoryTypes.CATID_Encoder)]
     [System.Runtime.InteropServices.Guid("9d0e4103-4cce-4536-83fa-4a5040674ad6")]
-    public partial class SetFileExtOnEmailAttachment : IBaseComponent, IComponent, IComponentUI, IPersistPropertyBag
+    public partial class SetEmailAttachmentFilename : IBaseComponent, IComponent, IComponentUI, IPersistPropertyBag
     {
         private const string FileExtensionPropertyName = "FileExtension";
-        private const string UseMessageExtensionPropertyName = "UseMessageExtension";
+        private const string UseMessageFilenamePropertyName = "UseMessageFilename";
+        private const string FilenamePropertyName = "Filename";
+        private const string XPathsPropertyName = "XPaths";
+        private const string SeparatorCharPropertyName = "SeparatorChar";
 
         #region Parameters
         
-        // Lägg till ytterligare en parameter? Output filename
-
         [DisplayName("File Extension")]
         [Description("The file extension to set on the email attachment")]
         public string FileExtension { get; set; }
 
+        [DisplayName("Filename")]
+        [Description("The filename to set for the attached message. Do not include any file extension here")]
+        public string Filename { get; set; }
+
+        [DisplayName("Xpaths")]
+        [Description("Xpaths to message records. Separate multiple xpaths with the '|' char")]
+        public string XPaths { get; set; }
+
+        [DisplayName("SeparatorChar")]
+        [Description("Charachter to use as separater in the filename between the Xpath record values")]
+        public string SeparatorChar { get; set; }
+
         [RequiredRuntime]
-        [DisplayName("Use message extension")]
-        [Description("Use the processed message file extension")]
-        public bool UseMessageExtension { get; set; }
+        [DisplayName("Use message filename")]
+        [Description("Use the processed message filename")]
+        public bool UseMessageFilename { get; set; }
 
         #endregion
 
@@ -46,18 +59,15 @@ namespace BizTalkComponents.PipelineComponents.SetFileExtOnEmailAttachment
 
             try
             {
-                // Filändelser sätts inte på utgående mail. Se över logik ytterligare
-                // Enligt den URI ser jag ut att göra rätt: http://www.hivmr.com/db/ps7cpmx1dscxcxf8fzsp9kskfjzkfzs3
-                if (UseMessageExtension)
+                if (UseMessageFilename)
                 {
-                    var recievedFileName = ContextExtensions.Read(pInMsg.Context, new ContextProperty(FileProperties.ReceivedFileName));
-                    ContextExtensions.Write(pInMsg.Context, new ContextProperty(MIMEProperties.FileName), recievedFileName);
+                    var receivedFileName = ContextExtensions.Read(pInMsg.Context, new ContextProperty(FileProperties.ReceivedFileName));
+                    pInMsg.BodyPart.PartProperties.Write("FileName", "http://schemas.microsoft.com/BizTalk/2003/mime-properties", receivedFileName);
                 }
-                // Filändelser sätts inte på utgående mail. Se över logik ytterligare
-                // Enligt den URI ser jag ut att göra rätt: http://www.hivmr.com/db/ps7cpmx1dscxcxf8fzsp9kskfjzkfzs3
+
                 else if (!String.IsNullOrEmpty(FileExtension))
                 {
-                    ContextExtensions.Write(pInMsg.Context, new ContextProperty(MIMEProperties.FileName), FileExtension);
+                    pInMsg.BodyPart.PartProperties.Write("FileName", "http://schemas.microsoft.com/BizTalk/2003/mime-properties", FileExtension);
                 }
                 else
                 {
@@ -83,13 +93,19 @@ namespace BizTalkComponents.PipelineComponents.SetFileExtOnEmailAttachment
         public void Load(IPropertyBag propertyBag, int errorLog)
         {
             FileExtension = PropertyBagHelper.ReadPropertyBag<string>(propertyBag, FileExtensionPropertyName);
-            UseMessageExtension = PropertyBagHelper.ReadPropertyBag<bool>(propertyBag, UseMessageExtensionPropertyName);
+            UseMessageFilename = PropertyBagHelper.ReadPropertyBag<bool>(propertyBag, UseMessageFilenamePropertyName);
+            Filename = PropertyBagHelper.ReadPropertyBag<string>(propertyBag, FilenamePropertyName);
+            XPaths = PropertyBagHelper.ReadPropertyBag<string>(propertyBag, XPathsPropertyName);
+            SeparatorChar = PropertyBagHelper.ReadPropertyBag<string>(propertyBag, SeparatorCharPropertyName);
         }
 
         public void Save(IPropertyBag propertyBag, bool clearDirty, bool saveAllProperties)
         {
             PropertyBagHelper.WritePropertyBag(propertyBag, FileExtensionPropertyName, FileExtension);
-            PropertyBagHelper.WritePropertyBag(propertyBag, UseMessageExtensionPropertyName, UseMessageExtension);
+            PropertyBagHelper.WritePropertyBag(propertyBag, UseMessageFilenamePropertyName, UseMessageFilename);
+            PropertyBagHelper.WritePropertyBag(propertyBag, FilenamePropertyName, Filename);
+            PropertyBagHelper.WritePropertyBag(propertyBag, XPathsPropertyName, XPaths);
+            PropertyBagHelper.WritePropertyBag(propertyBag, SeparatorCharPropertyName, SeparatorChar);
         }
     }
 }

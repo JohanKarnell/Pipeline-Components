@@ -1,0 +1,10 @@
+C:\Projects\GITHUB\Pipeline-Components\BizTalkComponents.PipelineComponents.SetEmailAttachmentFilename\Tests\UnitTests\obj\Debug\BizTalkComponents.PipelineComponents.SetEmailAttachmentFilename.Tests.UnitTests.csprojResolveAssemblyReference.cache
+C:\Projects\GITHUB\Pipeline-Components\BizTalkComponents.PipelineComponents.SetEmailAttachmentFilename\Tests\UnitTests\bin\Debug\BizTalkComponents.PipelineComponents.SetEmailAttachmentFilename.Tests.UnitTests.dll
+C:\Projects\GITHUB\Pipeline-Components\BizTalkComponents.PipelineComponents.SetEmailAttachmentFilename\Tests\UnitTests\bin\Debug\BizTalkComponents.PipelineComponents.SetEmailAttachmentFilename.Tests.UnitTests.pdb
+C:\Projects\GITHUB\Pipeline-Components\BizTalkComponents.PipelineComponents.SetEmailAttachmentFilename\Tests\UnitTests\bin\Debug\BizTalkComponents.PipelineComponents.SetEmailAttachmentFilename.dll
+C:\Projects\GITHUB\Pipeline-Components\BizTalkComponents.PipelineComponents.SetEmailAttachmentFilename\Tests\UnitTests\bin\Debug\Winterdom.BizTalk.PipelineTesting.dll
+C:\Projects\GITHUB\Pipeline-Components\BizTalkComponents.PipelineComponents.SetEmailAttachmentFilename\Tests\UnitTests\bin\Debug\PipelineObjects.dll
+C:\Projects\GITHUB\Pipeline-Components\BizTalkComponents.PipelineComponents.SetEmailAttachmentFilename\Tests\UnitTests\bin\Debug\BizTalkComponents.PipelineComponents.SetEmailAttachmentFilename.pdb
+C:\Projects\GITHUB\Pipeline-Components\BizTalkComponents.PipelineComponents.SetEmailAttachmentFilename\Tests\UnitTests\bin\Debug\Winterdom.BizTalk.PipelineTesting.xml
+C:\Projects\GITHUB\Pipeline-Components\BizTalkComponents.PipelineComponents.SetEmailAttachmentFilename\Tests\UnitTests\obj\Debug\BizTalkComponents.PipelineComponents.SetEmailAttachmentFilename.Tests.UnitTests.dll
+C:\Projects\GITHUB\Pipeline-Components\BizTalkComponents.PipelineComponents.SetEmailAttachmentFilename\Tests\UnitTests\obj\Debug\BizTalkComponents.PipelineComponents.SetEmailAttachmentFilename.Tests.UnitTests.pdb

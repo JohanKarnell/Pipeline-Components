@@ -6,8 +6,8 @@
     <ProjectGuid>{298D31EB-2EC5-4838-9F96-1EDA8D04AEEC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BizTalkComponents.PipelineComponents.SetFileExtOnEmailAttachment.Tests.UnitTests</RootNamespace>
-    <AssemblyName>BizTalkComponents.PipelineComponents.SetFileExtOnEmailAttachment.Tests.UnitTests</AssemblyName>
+    <RootNamespace>BizTalkComponents.PipelineComponents.SetEmailAttachmentFilename.Tests.UnitTests</RootNamespace>
+    <AssemblyName>BizTalkComponents.PipelineComponents.SetEmailAttachmentFilename.Tests.UnitTests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -60,16 +60,16 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="SetFileExtOnEmailAttachmentTests.cs" />
+    <Compile Include="SetEmailAttachmentFilenameTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Src\SetFileExtOnEmailAttachment\BizTalkComponents.PipelineComponents.SetFileExtOnEmailAttachment.csproj">
+    <ProjectReference Include="..\..\Src\SetEmailAttachmentFilename\BizTalkComponents.PipelineComponents.SetEmailAttachmentFilename.csproj">
       <Project>{12e418fa-fdf9-49ac-9ef6-f5c2bc96be19}</Project>
-      <Name>BizTalkComponents.PipelineComponents.SetFileExtOnEmailAttachment</Name>
+      <Name>BizTalkComponents.PipelineComponents.SetEmailAttachmentFilename</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

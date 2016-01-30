@@ -3,22 +3,22 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Winterdom.BizTalk.PipelineTesting;
 using BizTalkComponents.Utils;
 
-namespace BizTalkComponents.PipelineComponents.SetFileExtOnEmailAttachment.Tests.UnitTests
+namespace BizTalkComponents.PipelineComponents.SetEmailAttachmentFilename.Tests.UnitTests
 {
     [TestClass]
-    public class SetFileExtOnEmailAttachmentTests
+    public class SetEmailAttachmentFilenameTests
     {
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
         public void IncorrectParametersTest()
         {
             var pipeline = PipelineFactory.CreateEmptySendPipeline();
-            var useMessageExtension = false;
+            var useMessageFilename = false;
             var filename = "testmessage1";
 
-            var component = new SetFileExtOnEmailAttachment
+            var component = new SetEmailAttachmentFilename
             {
-                UseMessageExtension = useMessageExtension
+                UseMessageFilename = useMessageFilename,
             };
 
             pipeline.AddComponent(component, PipelineStage.Encode);
@@ -28,16 +28,18 @@ namespace BizTalkComponents.PipelineComponents.SetFileExtOnEmailAttachment.Tests
             Assert.IsTrue(true);
         }
 
+
+
         [TestMethod]
         public void UseMessageExtensionTest()
         {
             var pipeline = PipelineFactory.CreateEmptySendPipeline();
-            var useMessageExtension = true;
+            var useMessageFilename = true;
             var filename = "testmessage1.xml";
 
-            var component = new SetFileExtOnEmailAttachment
+            var component = new SetEmailAttachmentFilename
             {
-                UseMessageExtension = useMessageExtension
+                UseMessageFilename = useMessageFilename,
             };
 
             pipeline.AddComponent(component, PipelineStage.Encode);
@@ -51,13 +53,13 @@ namespace BizTalkComponents.PipelineComponents.SetFileExtOnEmailAttachment.Tests
         public void FileExtensionTest()
         {
             var pipeline = PipelineFactory.CreateEmptySendPipeline();
-            var useMessageExtension = false;
+            var useMessageFilename = false;
             var filename = "testmessage1";
             var fileExtension = ".xml";
 
-            var component = new SetFileExtOnEmailAttachment
+            var component = new SetEmailAttachmentFilename
             {
-                UseMessageExtension = useMessageExtension,
+                UseMessageFilename = useMessageFilename,
                 FileExtension = fileExtension
             };
 

@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("BizTalkComponents.PipelineComponents.SetFileExtOnEmailAttachment.Tests.UnitTests")]
+[assembly: AssemblyTitle("BizTalkComponents.PipelineComponents.SetEmailAttachmentFilename")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("BizTalkComponents.PipelineComponents.SetFileExtOnEmailAttachment.Tests.UnitTests")]
+[assembly: AssemblyProduct("BizTalkComponents.PipelineComponents.SetEmailAttachmentFilename")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("9cf83676-2c63-44d9-a822-dfa494d124c6")]
+[assembly: Guid("8df4999f-3dc9-4a43-b854-9b1fd4745dc9")]
 
 // Version information for an assembly consists of the following four values:
 //
