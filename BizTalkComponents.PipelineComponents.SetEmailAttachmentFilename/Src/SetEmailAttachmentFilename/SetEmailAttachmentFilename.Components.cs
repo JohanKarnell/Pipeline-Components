@@ -12,11 +12,11 @@ namespace BizTalkComponents.PipelineComponents.SetEmailAttachmentFilename
     {
         public string Name { get { return "SetEmailAttachmentFilename"; } }
         public string Version { get { return "1.0"; } }
-        public string Description { get { return "Sets the filename of an email attachments sent by BizTalk via the SMTP adapter"; } }
+        public string Description { get { return "Sets the MIME FileName property to the outgoing message by copying the value of a given message context property from the processed message"; } }
 
         public IntPtr Icon
         {
-            get { throw new NotImplementedException(); }
+            get { return IntPtr.Zero; }
         }
 
         public IEnumerator Validate(object projectSystem)
@@ -38,6 +38,15 @@ namespace BizTalkComponents.PipelineComponents.SetEmailAttachmentFilename
             errorMessage = string.Empty;
 
             return true;
+        }
+
+        public void GetClassID(out Guid classID)
+        {
+            classID = new Guid("7A638E15-52B8-4F77-80B4-A248887FF44B");
+        }
+
+        public void InitNew()
+        {
         }
 
     }
