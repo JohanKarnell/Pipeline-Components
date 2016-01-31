@@ -12,7 +12,7 @@ namespace BizTalkComponents.PipelineComponents.SetEmailAttachmentFilename
     {
         public string Name { get { return "SetEmailAttachmentFilename"; } }
         public string Version { get { return "1.0"; } }
-        public string Description { get { return "Sets the filename of an email attachment sent by BizTalk via the SMTP adapter by picking the value from a promoted promoted property"; } }
+        public string Description { get { return "Sets the MIME FileName property to the outgoing message by copying the value of a given message context property from the processed message"; } }
 
         public IntPtr Icon
         {
